@@ -17,7 +17,7 @@ class ClassComponent extends React.Component<any, any> {
                 <button onClick={() => this.setState({ count: this.state.count + 1 })}>
                     Click me
                 </button>
-                {this.state.count == 0 || this.state.count == 5 ? null : <ComponentA />}
+                {this.state.count == 0 || this.state.count == 5 ? null : <ComponentA onClick={()=>{console.error('arrow function in callback');}}/>}
             </div>
         );
     }
