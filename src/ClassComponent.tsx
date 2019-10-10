@@ -23,7 +23,7 @@ class ClassComponent extends React.Component<any, any> {
     }
 }
 
-class ComponentA extends React.Component<any, any> {
+class ComponentA extends React.PureComponent<any, any> {
     constructor(props:any) {
         super(props);
         this.state = {
