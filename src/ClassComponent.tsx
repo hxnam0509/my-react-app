@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 class ClassComponent extends React.Component<any, any> {
     constructor(props: any) {
@@ -11,6 +11,21 @@ class ClassComponent extends React.Component<any, any> {
 
     onClickHandler = () => {
         console.error('onClickHandler as a class field');
+    }
+
+    componentDidMount() {
+        document.title = `You clicked ${this.state.count} times`;
+        console.error('this.componentDidMount()');
+
+    }
+
+    componentDidUpdate() {
+        document.title = `You clicked ${this.state.count} times`;
+        console.error('this.componentDidUpdate()');
+    }
+
+    componentWillUnmount(): void {
+        console.error('this.componentWillUnmount()');
     }
 
     render() {
@@ -35,7 +50,20 @@ class ComponentA extends React.PureComponent<any, any> {
         };
         console.error('mount Component A -> running constructor');
     }
+    componentDidMount() {
+        document.title = `You clicked ${this.state.count} times`;
+        console.error('this.componentDidMount()');
 
+    }
+
+    componentDidUpdate() {
+        document.title = `You clicked ${this.state.count} times`;
+        console.error('this.componentDidUpdate()');
+    }
+
+    componentWillUnmount(): void {
+        console.error('this.componentWillUnmount()');
+    }
     render() {
         console.error('render Component A');
         return (
